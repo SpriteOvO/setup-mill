@@ -31,7 +31,7 @@ async function run() {
     // TODO: once caching across workflow invocations is available, this dorectory should be cached too
     //       (note that caching would only help for multiple jobs, as data is cached in the home directory
     //       which is shared across steps)
-    await exec.exec('mill', ['version']);
+    await exec.exec('mill', ['-i', 'version']);
   }
   catch (error) {
     core.setFailed(error.message);
